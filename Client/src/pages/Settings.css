@@ -1,0 +1,362 @@
+.settings-page{
+    min-height: 100vh;
+    background: #f5f5f5;
+    padding: 40px;
+}
+
+.settings-container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.settings-title{
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: #2c2c2c;
+}
+
+/* Top Profile Card */
+
+.profile-card{
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.profile-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-image{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #9c6b43;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-info h3{
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.profile-info p{
+    color: gray;
+    font-size: 15px;
+}
+
+.edit-btn{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #9c6b43;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.edit-btn:hover{
+    background: #7d5434;
+}
+
+/* Settings Cards */
+
+.settings-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+}
+
+.setting-card{
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.setting-card h3{
+    margin-bottom: 10px;
+    color: #2c2c2c;
+}
+
+.setting-card p{
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* Toggle Switch */
+
+.toggle{
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle.active{
+    background: #9c6b43;
+}
+
+.toggle-circle{
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+.toggle.active .toggle-circle{
+    left: 33px;
+}
+
+/* Logout Button */
+
+.logout-btn{
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #e74c3c;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover{
+    background: #c0392b;
+}
+
+/* Responsive */
+
+@media screen and (max-width:768px){
+
+    .settings-page{
+        padding: 20px;
+    }
+
+    .profile-card{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .profile-left{
+        flex-direction: column;
+    }
+
+    .settings-title{
+        font-size: 34px;
+    }
+}
+/* DARK MODE */
+
+.dark{
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark .profile-card,
+.dark .setting-card{
+    background: #2c2c2c;
+    color: white;
+}
+
+.dark .profile-info p,
+.dark .setting-card p{
+    color: #cfcfcf;
+}
+
+.dark .settings-title{
+    color: white;
+}
+
+/* PROFILE IMAGE FIX */
+
+.profile-image{
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    border-radius: 50%;
+    background: #9c6b43;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PROFILE CARD FIX */
+
+.profile-card{
+    background: white;
+    border-radius: 18px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.profile-left{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* EDIT BUTTON FIX */
+
+.edit-btn{
+    width: 180px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #9c6b43;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.edit-btn:hover{
+    background: #7d5434;
+}
+
+/* TOGGLE FIX */
+
+.toggle{
+    width: 65px;
+    height: 34px;
+    background: #cfcfcf;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-circle{
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+.toggle.active{
+    background: #9c6b43;
+}
+
+.toggle.active .toggle-circle{
+    left: 34px;
+}
+.back-btn{
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #9c6b43;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.back-btn:hover{
+    background: #7d5434;
+}
+/* EDIT FORM */
+
+.edit-form{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.edit-form input,
+.edit-form textarea{
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.edit-form textarea{
+    resize: none;
+    height: 100px;
+}
+
+.save-btn{
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #9c6b43;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.save-btn:hover{
+    background: #7d5434;
+}
+
+.dark .edit-form{
+    background: #2c2c2c;
+}
+
+.dark .edit-form input,
+.dark .edit-form textarea{
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #555;
+}
+/* PASSWORD EYE */
+
+.password-box{
+    position: relative;
+    width: 100%;
+}
+
+.password-box input{
+    width: 100%;
+    padding-right: 50px;
+}
+
+.eye-btn{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
