@@ -132,3 +132,39 @@
   border-radius:5px;
   cursor:pointer;
 }
+.invoice-page {
+  min-height: 100vh;
+}
+
+.dark .invoice-page {
+  background-color: #121212;
+}
+
+.dark .invoice-top h1,
+.dark .invoice-top p {
+  color: white;
+}
+.dark .card,
+.dark .recent-invoices,
+.dark .chart-section,
+.dark .pie-chart-section {
+  background: #1e1e1e;
+  color: white;
+}
+.dark table {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark th,
+.dark td {
+  color: white;
+  border-color: #444;
+}
+.dark input,
+.dark textarea,
+.dark select {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+}

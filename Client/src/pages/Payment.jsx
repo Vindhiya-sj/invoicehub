@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Layout from "./Layout";
 
 function Payment() {
 
@@ -155,7 +156,7 @@ function Payment() {
 };
 
   return (
-
+<Layout>
     <div className="payment-page">
 
       <div className="payment-top">
@@ -172,14 +173,7 @@ function Payment() {
 
         </div>
 
-        <button
-          className="back-btn"
-          onClick={() =>
-            navigate("/dashboard")
-          }
-        >
-          ← Back to Dashboard
-        </button>
+        
 
       </div>
 
@@ -414,7 +408,7 @@ function Payment() {
       </div>
 
     </div>
-
+</Layout>
   );
 
 }

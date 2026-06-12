@@ -1,7 +1,7 @@
 import "./Settings.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Layout from "./Layout";
 function Settings() {
 
   const [showPassword, setShowPassword] = useState(false);
@@ -36,6 +36,15 @@ function Settings() {
       setUser(savedUser);
     }
 
+  const savedDarkMode =
+    localStorage.getItem("darkMode") === "true";
+
+  if (savedDarkMode) {
+    document.body.classList.add("dark");
+  }
+
+
+
     const companyDetails =
       JSON.parse(localStorage.getItem("companyDetails")) || {};
 
@@ -63,16 +72,28 @@ function Settings() {
 
   }, []);
 
-  const handleDarkMode = () => {
+ const handleDarkMode = () => {
 
-    const newMode = !darkMode;
+  const newMode = !darkMode;
 
-    setDarkMode(newMode);
+  setDarkMode(newMode);
 
-    localStorage.setItem("darkMode", newMode);
+  localStorage.setItem(
+    "darkMode",
+    newMode
+  );
 
-  };
+  if (newMode) {
 
+    document.body.classList.add("dark");
+
+  } else {
+
+    document.body.classList.remove("dark");
+
+  }
+
+};
   const handleLogout = () => {
 
   localStorage.removeItem("token");
@@ -153,19 +174,12 @@ function Settings() {
   };
 
   return (
-
+<Layout>
     <div className={darkMode ? "settings-page dark" : "settings-page"}>
 
       <div className="settings-container">
 
-        {/* Back Button */}
-
-        <button
-          className="back-btn"
-          onClick={() => navigate("/dashboard")}
-        >
-          ← Back to Dashboard
-        </button>
+  
 
         <h1 className="settings-title">
           Settings
@@ -399,7 +413,7 @@ function Settings() {
       </div>
 
     </div>
-
+</Layout>
   );
 }
 

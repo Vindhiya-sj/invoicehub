@@ -6,6 +6,7 @@ import axios from "axios";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { useLocation } from "react-router-dom";
+import Layout from "./Layout";
 
 function Invoice() {
 
@@ -304,6 +305,7 @@ useEffect(() => {
 
   return (
 
+    <Layout>
     <div className="invoice-page">
 
       {/* TOP SECTION */}
@@ -322,12 +324,7 @@ useEffect(() => {
 
         </div>
 
-        <button
-          className="back-btn"
-          onClick={() => navigate("/dashboard")}
-        >
-          ← Back to Dashboard
-        </button>
+
 
       </div>
 
@@ -479,7 +476,7 @@ useEffect(() => {
       </form>
 
     </div>
-
+</Layout>
   );
 
 }

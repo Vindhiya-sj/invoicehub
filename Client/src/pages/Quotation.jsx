@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import Layout from "./Layout";
 
 
 function Quotation() {
@@ -249,6 +249,7 @@ function Quotation() {
   };
 
   return (
+    <Layout>
 
     <div className="quotation-page">
 
@@ -266,12 +267,7 @@ function Quotation() {
 
         </div>
 
-        <button
-          className="back-btn"
-          onClick={() => navigate("/dashboard")}
-        >
-          ← Back to Dashboard
-        </button>
+       
 
       </div>
 
@@ -504,7 +500,7 @@ function Quotation() {
       </div>
 
     </div>
-
+</Layout>
   );
 
 }

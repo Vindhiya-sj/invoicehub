@@ -1,1 +1,122 @@
 @import "tailwindcss";
+/* GLOBAL DARK MODE */
+
+body.dark{
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark .main-content{
+  background-color: #1e1e1e;
+}
+
+.dark .card,
+.dark .profile-card,
+.dark .setting-card,
+.dark .client-form,
+.dark .invoice-form,
+.dark .quotation-form,
+.dark .payment-form,
+.dark .recent-invoices,
+.dark .chart-section,
+.dark .pie-chart-section,
+.dark table{
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.dark input,
+.dark textarea,
+.dark select{
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p,
+.dark label,
+.dark td,
+.dark th{
+  color: white;
+}
+
+.dark table th,
+.dark table td{
+  border-color: #555;
+}
+.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .main-content {
+  background: #1e1e1e;
+}
+
+.dark .card,
+.dark .chart-section,
+.dark .pie-chart-section,
+.dark .recent-invoices,
+.dark table,
+.dark .client-form,
+.dark .invoice-form,
+.dark .quotation-form,
+.dark .payment-form,
+.dark .profile-card,
+.dark .setting-card,
+.dark .edit-form {
+  background: #2c2c2c;
+  color: white;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark th,
+.dark td,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p,
+.dark label {
+  color: white;
+}
+/* GLOBAL DARK MODE */
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .main-content {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark p,
+.dark label,
+.dark span {
+  color: white;
+}
+.dashboard-container.dark {
+  background: #121212 !important;
+}
+
+.dashboard-container.dark .main-content {
+  background: #121212 !important;
+  color: white !important;
+  min-height: 100vh;
+}

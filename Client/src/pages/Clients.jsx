@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Layout from "./Layout";
 
 function Clients() {
 
@@ -175,166 +176,162 @@ function Clients() {
 
 
   return (
-
-    <div className="clients-page">
-
-      <button
-        className="back-btn"
-        onClick={() => navigate("/dashboard")}
-      >
-        ← Back to Dashboard
-      </button>
-
-      <h1>
-        Clients Management
-      </h1>
+    <Layout>
+      <div className="clients-page">
 
 
 
-      {/* FORM */}
 
-      <form
-        className="client-form"
-        onSubmit={handleAddClient}
-      >
+        <h1>
+          Clients Management
+        </h1>
+  
 
-        <input
-          type="text"
-          placeholder="Client Name"
-          value={name}
-          onChange={(e) =>
-            setName(e.target.value)
-          }
-        />
 
-        <input
-          type="text"
-          placeholder="Company Name"
-          value={company}
-          onChange={(e) =>
-            setCompany(e.target.value)
-          }
-        />
+        {/* FORM */}
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
-        />
+        <form
+          className="client-form"
+          onSubmit={handleAddClient}
+        >
 
-        <button type="submit">
+          <input
+            type="text"
+            placeholder="Client Name"
+            value={name}
+            onChange={(e) =>
+              setName(e.target.value)
+            }
+          />
 
+          <input
+            type="text"
+            placeholder="Company Name"
+            value={company}
+            onChange={(e) =>
+              setCompany(e.target.value)
+            }
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) =>
+              setEmail(e.target.value)
+            }
+          />
+
+          <button type="submit">
+
+            {
+              editId
+                ? "Update Client"
+                : "Add Client"
+            }
+
+          </button>
           {
-            editId
-              ? "Update Client"
-              : "Add Client"
+            editId && (
+
+              <button
+                type="button"
+                className="cancel-btn"
+                onClick={() => {
+
+                  setName("");
+                  setCompany("");
+                  setEmail("");
+                  setEditId(null);
+
+                }}
+              >
+
+                Cancel
+
+              </button>
+
+            )
           }
 
-        </button>
-        {
-  editId && (
-
-    <button
-      type="button"
-      className="cancel-btn"
-      onClick={() => {
-
-        setName("");
-        setCompany("");
-        setEmail("");
-        setEditId(null);
-
-      }}
-    >
-
-      Cancel
-
-    </button>
-
-  )
-}
-
-      </form>
+        </form>
 
 
 
-      {/* TABLE */}
+        {/* TABLE */}
 
-      <table className="clients-table">
+        <table className="clients-table">
 
-        <thead>
+          <thead>
 
-          <tr>
+            <tr>
 
-            <th>ID</th>
+              <th>ID</th>
 
-            <th>Name</th>
+              <th>Name</th>
 
-            <th>Company</th>
+              <th>Company</th>
 
-            <th>Email</th>
+              <th>Email</th>
 
-            <th>Action</th>
+              <th>Action</th>
 
-          </tr>
+            </tr>
 
-        </thead>
+          </thead>
 
-        <tbody>
+          <tbody>
 
-          {
-            clients.map((client, index) => (
+            {
+              clients.map((client, index) => (
 
-              <tr key={client._id}>
+                <tr key={client._id}>
 
-                <td>
-                  {index + 1}
-                </td>
+                  <td>
+                    {index + 1}
+                  </td>
 
-                <td>
-                  {client.name}
-                </td>
+                  <td>
+                    {client.name}
+                  </td>
 
-                <td>
-                  {client.company}
-                </td>
+                  <td>
+                    {client.company}
+                  </td>
 
-                <td>
-                  {client.email}
-                </td>
-                <td className="action-buttons">
+                  <td>
+                    {client.email}
+                  </td>
+                  <td className="action-buttons">
 
-                  <button
-                    type="button"
-                    className="edit-btn"
-                    onClick={() => handleEdit(client)}
-                  >
-                    Edit
-                  </button>
+                    <button
+                      type="button"
+                      className="edit-btn"
+                      onClick={() => handleEdit(client)}
+                    >
+                      Edit
+                    </button>
 
-                  <button
-                    type="button"
-                    className="delete-btn"
-                    onClick={() => handleDelete(client._id)}
-                  >
-                    Delete
-                  </button>
+                    <button
+                      type="button"
+                      className="delete-btn"
+                      onClick={() => handleDelete(client._id)}
+                    >
+                      Delete
+                    </button>
 
-                </td>
-              </tr>
+                  </td>
+                </tr>
 
-            ))
-          }
+              ))
+            }
 
-        </tbody>
+          </tbody>
 
-      </table>
+        </table>
 
-    </div>
-
+      </div>
+    </Layout>
   );
 
 }

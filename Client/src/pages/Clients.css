@@ -135,3 +135,34 @@
   margin-left: 10px;
 
 }
+
+.dark .clients-page {
+  background-color: #121212;
+}
+
+.dark .clients-top h1,
+.dark .clients-top p {
+  color: white;
+}
+.dark .card,
+.dark .recent-clients{
+  background: #1e1e1e;
+  color: white;
+}
+.dark table {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark th,
+.dark td {
+  color: white;
+  border-color: #444;
+}
+.dark input,
+.dark textarea,
+.dark select {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+}

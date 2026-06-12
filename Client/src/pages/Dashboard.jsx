@@ -32,6 +32,7 @@ import {
   LineChart,
   Line
 } from "recharts";
+import Layout from "./Layout";
 
 function Dashboard() {
 
@@ -54,9 +55,8 @@ function Dashboard() {
   const [payments, setPayments] =
     useState([]);
 
-  const [darkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+  const darkMode =
+localStorage.getItem("darkMode") === "true";
 
   const [searchTerm, setSearchTerm] =
     useState("");
@@ -334,6 +334,7 @@ function Dashboard() {
   });
 
   return (
+    <layout>
 
     <div
       className={
@@ -788,7 +789,7 @@ function Dashboard() {
       </div>
 
     </div>
-
+</layout>
   );
 
 }

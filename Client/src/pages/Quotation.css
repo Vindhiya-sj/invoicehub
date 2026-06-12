@@ -90,7 +90,6 @@
 }
 .quotation-table-container{
     margin-top: 40px;
-    background: white;
     padding: 30px;
     border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -137,4 +136,35 @@
   background:#999;
   cursor:not-allowed;
   opacity:0.7;
+}
+
+.dark .quotation-page {
+  background-color: #121212;
+}
+
+.dark .quotation-top h1,
+.dark .quotation-top p {
+  color: white;
+}
+.dark .card,
+.dark .recent-quotation{
+  background: #1e1e1e;
+  color: white;
+}
+.dark table {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark th,
+.dark td {
+  color: white;
+  border-color: #444;
+}
+.dark input,
+.dark textarea,
+.dark select {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
 }

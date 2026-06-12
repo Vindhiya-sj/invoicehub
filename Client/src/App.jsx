@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -20,8 +22,23 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  useEffect(() => {
+
+    const darkMode =
+      localStorage.getItem("darkMode") === "true";
+
+    if (darkMode) {
+
+      document.body.classList.add("dark");
+
+    }
+
+  }, []);
+
   return (
+    
     <>
+    
       <Routes>
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/" element={<Login />} />
