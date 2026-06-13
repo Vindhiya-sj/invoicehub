@@ -15,6 +15,7 @@ import Payment from "./pages/Payment";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
 import ResetPassword from "./pages/ResetPassword";
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 
@@ -52,6 +53,8 @@ function App() {
         <Route path="/quotation" element={<ProtectedRoute><Quotation /></ProtectedRoute>} />
         <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute> }/>
+z
 
       </Routes>
 

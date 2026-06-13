@@ -5,8 +5,9 @@ import {
   FaFileInvoice,
   FaReceipt,
   FaWallet,
-  FaCog
-} from "react-icons/fa";
+  FaCog,
+FaUserShield }
+ from "react-icons/fa";
 
 function Sidebar() {
   return (
@@ -39,7 +40,11 @@ function Sidebar() {
         <Link to="/settings" className="menu-link">
           <li><FaCog /> Settings</li>
         </Link>
-
+        <Link to="/admin" className="menu-link">
+          <li>
+            <FaUserShield /> Admin
+          </li>
+        </Link>
       </ul>
 
     </div>
