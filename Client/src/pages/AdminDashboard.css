@@ -35,3 +35,43 @@
   margin-top:30px;
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+/* DARK MODE */
+
+.dark .admin-page {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .admin-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .admin-card h3 {
+  color: #d4a373;
+}
+
+.dark .users-section {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark table {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark th,
+.dark td {
+  border-color: #333;
+}
+
+.dark .chart-section {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .activity-card {
+  background: #1e1e1e;
+  color: white;
+}

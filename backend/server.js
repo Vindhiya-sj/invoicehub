@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(
 app.use(
   require("./controllers/quotationController")
 );
+app.use("/api/admin", adminRoutes);
 
 // DATABASE CONNECTION
 

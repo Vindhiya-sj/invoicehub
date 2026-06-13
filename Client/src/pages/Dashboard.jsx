@@ -334,116 +334,7 @@ localStorage.getItem("darkMode") === "true";
   });
 
   return (
-    <layout>
-
-    <div
-      className={
-        darkMode
-          ? "dashboard-container dark"
-          : "dashboard-container"
-      }
-    >
-
-      {/* SIDEBAR */}
-
-      <div className="sidebar">
-
-        <h2 className="logo">
-          InvoiceHub
-        </h2>
-
-        <ul>
-
-          <li className="active">
-
-            <FaHome className="icon" />
-
-            Dashboard
-
-          </li>
-
-          <NavLink
-            to="/clients"
-            className="menu-link"
-          >
-
-            <li>
-
-              <FaUsers className="icon" />
-
-              Clients
-
-            </li>
-
-          </NavLink>
-
-          <Link
-            to="/quotation"
-            className="menu-link"
-          >
-
-            <li>
-
-              <FaFileInvoice className="icon" />
-
-              Quotations
-
-            </li>
-
-          </Link>
-
-          <Link
-            to="/invoice"
-            className="menu-link"
-          >
-
-            <li>
-
-              <FaReceipt className="icon" />
-
-              Invoices
-
-            </li>
-
-          </Link>
-
-          <Link
-            to="/payment"
-            className="menu-link"
-          >
-
-            <li>
-
-              <FaWallet className="icon" />
-
-              Payments
-
-            </li>
-
-          </Link>
-
-          <Link
-            to="/settings"
-            className="menu-link"
-          >
-
-            <li>
-
-              <FaCog className="icon" />
-
-              Settings
-
-            </li>
-
-          </Link>
-
-        </ul>
-
-      </div>
-
-      {/* MAIN CONTENT */}
-
-      <div className="main-content">
+    <Layout>
 
         {/* NAVBAR */}
 
@@ -786,10 +677,10 @@ localStorage.getItem("darkMode") === "true";
 
         </div>
 
-      </div>
+      
 
-    </div>
-</layout>
+
+</Layout>
   );
 
 }

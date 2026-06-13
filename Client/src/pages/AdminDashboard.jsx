@@ -8,7 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer
 } from "recharts";
+import { useEffect,useState } from "react";
 function AdminDashboard() {
+  const [stats, setStats] = useState({});
     const data = [
   {
     month: "Jan",
@@ -27,7 +29,28 @@ function AdminDashboard() {
     revenue: 8000
   }
 ];
+const [users, setUsers] = useState([]);
+useEffect(() => {
+  fetchStats();
+  fetchUsers();
+}, []);
+const fetchUsers = async () => {
+  const response = await fetch(
+    "http://localhost:5000/api/admin/users"
+  );
 
+  const data = await response.json();
+  setUsers(data);
+};
+const fetchStats = async () => {
+  const response = await fetch(
+    "http://localhost:5000/api/admin/stats"
+  );
+
+  const data = await response.json();
+
+  setStats(data);
+};
   return (
     <Layout>
 
@@ -39,22 +62,22 @@ function AdminDashboard() {
 
           <div className="admin-card">
             <h3>Total Users</h3>
-            <p>10</p>
+            <p>{stats.totalUsers}</p>
           </div>
 
           <div className="admin-card">
             <h3>Total Clients</h3>
-            <p>25</p>
+            <p>{stats.totalClients}</p>
           </div>
 
           <div className="admin-card">
             <h3>Total Invoices</h3>
-            <p>50</p>
+            <p>{stats.totalInvoices}</p>
           </div>
 
           <div className="admin-card">
             <h3>Total Payments</h3>
-            <p>40</p>
+            <p>{stats.totalPayments}</p>
           </div>
 
         </div>
@@ -62,7 +85,7 @@ function AdminDashboard() {
       </div>
 <div className="admin-card">
   <h3>Total Revenue</h3>
-  <p>₹25,000</p>
+  <p>₹{stats.totalRevenue}</p>
 </div>
 <div className="users-section">
 
@@ -80,16 +103,17 @@ function AdminDashboard() {
 
     <tbody>
 
-      <tr>
-        <td>John</td>
-        <td>john@gmail.com</td>
-
-        <td>
-          <button className="delete-btn">
-            Delete
-          </button>
-        </td>
-      </tr>
+      {users.map((user) => (
+  <tr key={user._id}>
+    <td>{user.name}</td>
+    <td>{user.email}</td>
+    <td>
+      <button className="delete-btn">
+        Delete
+      </button>
+    </td>
+  </tr>
+))}
 
     </tbody>
 
@@ -120,17 +144,6 @@ function AdminDashboard() {
     </BarChart>
 
   </ResponsiveContainer>
-
-</div>
-<div className="activity-section">
-
-<h2>Recent Activities</h2>
-
-<ul>
-  <li>User added a Client</li>
-  <li>Invoice INV-1001 created</li>
-  <li>Payment received</li>
-</ul>
 
 </div>
     </Layout>

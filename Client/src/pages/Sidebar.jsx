@@ -6,10 +6,12 @@ import {
   FaReceipt,
   FaWallet,
   FaCog,
-FaUserShield }
- from "react-icons/fa";
+  FaUserShield
+}
+  from "react-icons/fa";
 
 function Sidebar() {
+  const role = localStorage.getItem("role");
   return (
     <div className="sidebar">
 
@@ -40,11 +42,13 @@ function Sidebar() {
         <Link to="/settings" className="menu-link">
           <li><FaCog /> Settings</li>
         </Link>
-        <Link to="/admin" className="menu-link">
-          <li>
-            <FaUserShield /> Admin
-          </li>
-        </Link>
+        {role === "admin" && (
+          <Link to="/admin" className="menu-link">
+            <li>
+              <FaUserShield /> Admin
+            </li>
+          </Link>
+        )}
       </ul>
 
     </div>

@@ -8,17 +8,17 @@ import axios from "axios";
 function Login() {
 
   const navigate = useNavigate();
- useEffect(() => {
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
 
-  const token =
-    localStorage.getItem("token");
-
-  if(token){
-
-    navigate("/dashboard");
-
+  if (token) {
+    if (role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/dashboard");
+    }
   }
-
 }, []);
 
   const [email, setEmail] = useState("");
@@ -47,9 +47,7 @@ function Login() {
 
   try {
 
-    const response = await axios.post(
-
-      "http://localhost:5000/login",
+    const response = await axios.post("http://localhost:5000/login",
 
       {
         email,
@@ -57,6 +55,7 @@ function Login() {
       }
 
     );
+    console.log(response.data);
 
     toast.success(
       response.data.message
@@ -75,11 +74,16 @@ function Login() {
       "userName",
       response.data.user.name
     );
+localStorage.setItem(
+  "role",
+  response.data.role
+);
 
-    // GO TO DASHBOARD
-
-    navigate("/dashboard");
-
+if (response.data.role === "admin") {
+  navigate("/admin");
+} else {
+  navigate("/dashboard");
+} 
   }
   catch (error) {
 

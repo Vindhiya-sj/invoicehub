@@ -122,19 +122,16 @@ router.post("/login", async (req, res) => {
       }
 
     );
-
-    res.status(200).json({
-
-      message: "Login Successful",
-
-      token,
-
-      user: {
-        name: user.name,
-        email: user.email
-      }
-
-    });
+console.log("USER ROLE:", user.role);
+   res.status(200).json({
+  message: "Login Successful",
+  token,
+  role: user.role,
+  user: {
+    name: user.name,
+    email: user.email
+  }
+});
 
   }
   catch(error){

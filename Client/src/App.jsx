@@ -54,7 +54,6 @@ function App() {
         <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute> }/>
-z
 
       </Routes>
 
